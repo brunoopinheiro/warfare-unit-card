@@ -3,6 +3,7 @@ import './App.css';
 import Form from './components/Form';
 import formInitialValues from './utils/formInitialValues';
 import Card from './components/Card';
+import Footer from './components/Footer';
 
 function App() {
   const [formValues, setValues] = useState(formInitialValues);
@@ -15,6 +16,7 @@ function App() {
       <h1>Warfare Unit Card</h1>
       <Form getFormValues={ getFormValues } />
       <Card formValues={ formValues } />
+      <Footer />
     </div>
   );
 }
