@@ -166,7 +166,9 @@ export default function Form({ getFormValues }) {
         <button
           type="button"
           onClick={ returnValues }
-        >Submit</button>
+        >
+          Update Card!
+        </button>
       </form>
     </div>
   );

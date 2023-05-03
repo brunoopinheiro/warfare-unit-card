@@ -1,3 +1,11 @@
 .unit-card {
+  font-size: 10px;
   border: 1px dashed red;
+}
+
+.unit-card .card-background {
+  opacity: 10%;
+  position: absolute;
+  top: 25%;
+  width: 500px;
 }

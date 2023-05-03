@@ -53,7 +53,7 @@ export default function Card({ formValues }) {
             ))
           }
         </ul>
-        <img src={ unitCard} alt="unit card background" />
+        <img src={ unitCard} alt="unit card background" className="card-background" />
       </div>
       <button
         onClick={ () => console.log(document.getElementsByClassName('unit-card')[0]) }
