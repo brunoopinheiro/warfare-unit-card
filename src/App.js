@@ -2,6 +2,7 @@ import { useState } from 'react';
 import './App.css';
 import Form from './components/Form';
 import formInitialValues from './utils/formInitialValues';
+import Card from './components/Card';
 
 function App() {
   const [formValues, setValues] = useState(formInitialValues);
@@ -13,9 +14,7 @@ function App() {
     <div className="App">
       <h1>Warfare Unit Card</h1>
       <Form getFormValues={ getFormValues } />
-      {
-        console.log(formValues)
-      }
+      <Card formValues={ formValues } />
     </div>
   );
 }

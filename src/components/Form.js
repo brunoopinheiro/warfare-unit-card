@@ -157,6 +157,12 @@ export default function Form({ getFormValues }) {
             { ...getNativeInputProps('tier') }
           />
         </label>
+        <label>
+          <span>Traits: </span>
+          <textarea
+            { ...getNativeInputProps('traits') }
+          />
+        </label>
         <button
           type="button"
           onClick={ returnValues }

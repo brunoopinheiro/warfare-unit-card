@@ -15,6 +15,7 @@ const formInitialValues = {
   numberAtks: '1',
   dmg: '1',
   tier: '1',
+  traits: '',
 };
 
 export default formInitialValues;
