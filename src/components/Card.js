@@ -4,6 +4,7 @@ import stringToArray from '../utils/stringToArray';
 import getUnitIcon from '../assets';
 import StatsDisplay from './StatsDisplay';
 import DamageDisplay from './DamageDisplay';
+import TopDisplay from './TopDisplay';
 
 export default function Card({ formValues }) {
   const {
@@ -35,11 +36,9 @@ export default function Card({ formValues }) {
     <div className="card-container">
       <div className="unit-card">
         <div className="left-column">
-          <div className="big-number-display">{ tier }</div>
+          <TopDisplay number={ tier } label="TIER" />
           <img src={ unitIcon } alt="unit type icon" className="type-icon" />
           <DamageDisplay dmg={ dmg } numberAtks={ numberAtks } />
-          {/* <div className="big-number-display">{ numberAtks }</div>
-          <div className="big-number-display">{ dmg }</div> */}
         </div>
         <div className="right-column">
           <div className="top-right-container">
@@ -48,7 +47,7 @@ export default function Card({ formValues }) {
               <p className="unit-commander">{commanderName}</p>
               <p className="tags">{tags}</p>
             </div>
-            <div className="big-number-display">{ unitSize }</div>
+            <TopDisplay number={ unitSize } label="SIZE" />
           </div>
           <div className="stats-container">
             <StatsDisplay value={`+${atk}`} label="ATK" />
