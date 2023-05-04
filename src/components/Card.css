@@ -1,15 +1,16 @@
 .unit-card {
   position: relative;
-  background-image: url('../assets/UnitCard-cropped.png');
+  /* background-image: url('../assets/UnitCard-cropped.png');
   background-size: auto;
-  background-repeat: no-repeat;
+  background-repeat: no-repeat; */
   font-size: 10px;
-  border: 1px dashed red;
+  border: 2px solid black;
+  border-radius: 1.8em;
 
   display: grid;
   grid-template-columns: 1fr 9fr;
   grid-template-rows: 1fr;
-  gap: 4% 0%;
+  gap: 0% 0%;
   grid-template-areas:
     "left-column right-column";
   justify-content: center;
@@ -72,8 +73,8 @@
   grid-template-areas:
     ". . . . . .";
   grid-area: stats-container;
-  align-items: baseline;
-  justify-items: baseline;
+  align-items: center;
+  justify-items: center;
 }
 
 .traits {
@@ -87,15 +88,11 @@
 }
 
 .type-icon {
-  width: 10rem;
+  width: 10em;
 }
 
 .big-number-display {
-  font-size: 4.5rem;
-}
-
-.big-stat-display {
-  font-size: 3.8rem;
+  font-size: 8em;
 }
 
 p {

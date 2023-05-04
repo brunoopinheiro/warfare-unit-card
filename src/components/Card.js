@@ -2,6 +2,7 @@ import React from 'react';
 import './Card.css';
 import stringToArray from '../utils/stringToArray';
 import getUnitIcon from '../assets';
+import StatsDisplay from './StatsDisplay';
 
 export default function Card({ formValues }) {
   const {
@@ -48,12 +49,12 @@ export default function Card({ formValues }) {
             <div className="big-number-display">{ unitSize }</div>
           </div>
           <div className="stats-container">
-            <div className="big-stat-display">{ `+${atk}` }</div>
-            <div className="big-stat-display">{ def }</div>
-            <div className="big-stat-display">{ `+${pow}` }</div>
-            <div className="big-stat-display">{ tou }</div>
-            <div className="big-stat-display">{ `+${mor}` }</div>
-            <div className="big-stat-display">{ `+${com}` }</div>
+            <StatsDisplay value={`+${atk}`} label="ATK" />
+            <StatsDisplay value={ def } label="DEF" />
+            <StatsDisplay value={ `+${pow}` } label="POW" />
+            <StatsDisplay value={ tou } label="TOU" />
+            <StatsDisplay value={ `+${mor}` } label="MOR" />
+            <StatsDisplay value={ `+${com}` } label="COM" />
           </div>
           <ul className="traits">
             {

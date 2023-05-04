@@ -1,0 +1,27 @@
+.big-stat-display {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  border: 1px dashed red;
+  height: 10em;
+  width: 13.5em;
+}
+
+.stats-frame {
+  background-image: url('../assets/stats-display.svg');
+  background-size: 12.9em;
+  background-position: center center;
+  background-repeat: no-repeat;
+  width: 100%;
+}
+
+.number {
+  font-size: 5em;
+}
+
+.label {
+  font-family: 'Cinzel', serif;
+  font-weight: 700;
+  font-size: 1.5em;
+}
