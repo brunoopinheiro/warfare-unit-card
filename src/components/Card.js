@@ -5,6 +5,7 @@ import getUnitIcon from '../assets';
 import StatsDisplay from './StatsDisplay';
 import DamageDisplay from './DamageDisplay';
 import TopDisplay from './TopDisplay';
+import Nameplate from './Nameplate';
 
 export default function Card({ formValues }) {
   const {
@@ -27,7 +28,7 @@ export default function Card({ formValues }) {
     traits,
   } = formValues;
 
-  const tags = `${unitExperience.toUpperCase()}, ${unitEquipment.toUpperCase()}, ${ancestry.toUpperCase()}, ${unitType.toUpperCase()}`;
+  const tags = `${unitExperience.toUpperCase()}, ${unitEquipment.toUpperCase()}, ${ancestry.toUpperCase() || 'HUMAN'}, ${unitType.toUpperCase()}`;
   const traitsArr = stringToArray(traits);
   const unitIcon = getUnitIcon(unitType);
   
@@ -43,9 +44,9 @@ export default function Card({ formValues }) {
         <div className="right-column">
           <div className="top-right-container">
             <div className="names-tags">
-              <p className="unit-name">{unitName}</p>
-              <p className="unit-commander">{commanderName}</p>
-              <p className="tags">{tags}</p>
+              <Nameplate text={ unitName } type="title" />
+              <Nameplate text={ commanderName} type="labeled" label="Commander" />
+              <Nameplate text={ tags } type="tags" />
             </div>
             <TopDisplay number={ unitSize } label="SIZE" />
           </div>
@@ -65,7 +66,6 @@ export default function Card({ formValues }) {
             }
           </ul>
         </div>
-        {/* <img src={ unitCard} alt="unit card background" className="card-background" /> */}
       </div>
       <button
         onClick={ () => console.log(document.getElementsByClassName('unit-card')[0]) }

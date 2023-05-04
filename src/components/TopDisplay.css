@@ -2,8 +2,6 @@
   display: flex;
   flex-direction: column;
   width: 9em;
-
-  border: 1px dashed red;
 }
 
 .t-display-frame {

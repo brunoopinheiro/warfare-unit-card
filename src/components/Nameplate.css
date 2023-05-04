@@ -1,0 +1,76 @@
+.title-text-container {
+  background-image: url('../assets/text-display.svg');
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: 88em;
+
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  align-items: center;
+  height: inherit;
+  width: inherit;
+}
+
+.labeled {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 75% 25%;
+
+  justify-content: center;
+  align-items: center;
+  width: inherit;
+}
+
+/* labeled */
+.text-container {
+  background-image: url('../assets/text-display.svg');
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: 30em;
+  height: 2.1em;
+
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  align-items: center;
+  width: inherit;
+}
+
+.tags-text-container {
+  background-image: url('../assets/text-display.svg');
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: 55em;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  width: inherit;
+}
+
+.title-label {
+  font-family: 'Cinzel', serif;
+  font-weight: 700;
+  font-size: 4.8em;
+}
+
+.tags-label {
+  font-family: 'Cinzel', serif;
+  font-weight: 600;
+  font-size: 1.6em;
+}
+
+.small-text {
+  font-family: 'Cinzel', serif;
+  font-weight: 600;
+  font-size: 1em;
+}
+
+.text-label {
+  font-family: 'Cinzel', serif;
+  font-weight: 700;
+  font-size: 1em;
+}
