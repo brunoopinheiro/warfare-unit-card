@@ -1,0 +1,25 @@
+.dmg-container {
+  background-image: url('../assets/double-display.svg');
+  background-size: 19em;
+  background-position: center center;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.2em;
+  
+  height: 26em;
+  width: 12em;
+}
+
+.dmg-label {
+  font-family: 'Cinzel', serif;
+  font-weight: 700;
+  font-size: 1.1em;
+}
+
+.dmg-number {
+  font-size: 4.4em;
+}
+

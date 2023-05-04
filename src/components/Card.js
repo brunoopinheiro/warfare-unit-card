@@ -3,6 +3,7 @@ import './Card.css';
 import stringToArray from '../utils/stringToArray';
 import getUnitIcon from '../assets';
 import StatsDisplay from './StatsDisplay';
+import DamageDisplay from './DamageDisplay';
 
 export default function Card({ formValues }) {
   const {
@@ -36,8 +37,9 @@ export default function Card({ formValues }) {
         <div className="left-column">
           <div className="big-number-display">{ tier }</div>
           <img src={ unitIcon } alt="unit type icon" className="type-icon" />
-          <div className="big-number-display">{ numberAtks }</div>
-          <div className="big-number-display">{ dmg }</div>
+          <DamageDisplay dmg={ dmg } numberAtks={ numberAtks } />
+          {/* <div className="big-number-display">{ numberAtks }</div>
+          <div className="big-number-display">{ dmg }</div> */}
         </div>
         <div className="right-column">
           <div className="top-right-container">
