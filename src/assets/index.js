@@ -4,7 +4,6 @@ import artillery from './artillery.svg';
 import cavalry from './cavalry.svg';
 import levy from './levy.svg';
 import siege from './siege.svg';
-import unitCard from './UnitCard.png'
 
 const getUnitIcon = (unitType) => {
   if(unitType === 'infantry') return infantry;
@@ -18,4 +17,4 @@ const getUnitIcon = (unitType) => {
 }
 
 export default getUnitIcon;
-export { infantry, aerial, artillery, cavalry, levy, siege, unitCard };
+export { infantry, aerial, artillery, cavalry, levy, siege };
