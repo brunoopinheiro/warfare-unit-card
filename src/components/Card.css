@@ -23,7 +23,7 @@
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 1fr 2fr 1fr 1fr;
-  gap: 4% 0%;
+  gap: 0% 0%;
   grid-template-areas:
     "."
     "."
@@ -41,7 +41,7 @@
 .right-column {
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 2fr 1.5fr 5fr;
+  grid-template-rows: 1.9fr 1.3fr 5fr;
   gap: 0px 0px;
   grid-template-areas:
     "top-right-container"
@@ -54,7 +54,7 @@
 
 .top-right-container {
   display: grid;
-  grid-template-columns: 2.5fr 1fr;
+  grid-template-columns: 4.5fr 1fr;
   grid-template-rows: 1fr;
   gap: 0px 0px;
   grid-template-areas:
