@@ -6,6 +6,7 @@ import StatsDisplay from './StatsDisplay';
 import DamageDisplay from './DamageDisplay';
 import TopDisplay from './TopDisplay';
 import Nameplate from './Nameplate';
+import TraitsDisplay from './TraitsDisplay';
 
 export default function Card({ formValues }) {
   const {
@@ -58,13 +59,7 @@ export default function Card({ formValues }) {
             <StatsDisplay value={ `+${mor}` } label="MOR" />
             <StatsDisplay value={ `+${com}` } label="COM" />
           </div>
-          <ul className="traits">
-            {
-              traitsArr.map((trait, index) => (
-                <li key={`${trait}-${index}`}>{trait}</li>
-              ))
-            }
-          </ul>
+          <TraitsDisplay traits={ traitsArr } />
         </div>
       </div>
       <button

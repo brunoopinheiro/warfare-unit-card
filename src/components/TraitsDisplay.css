@@ -1,0 +1,17 @@
+.traits-container {
+  background-image: url('../assets/traits-display.svg');
+  background-position: center center;
+  background-repeat: no-repeat;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.traits-list {
+  list-style: circle inside;
+  padding-left: 5em;
+  font-size: 1.7em;
+  text-align: start;
+}

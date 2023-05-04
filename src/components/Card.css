@@ -1,8 +1,5 @@
 .unit-card {
   position: relative;
-  /* background-image: url('../assets/UnitCard-cropped.png');
-  background-size: auto;
-  background-repeat: no-repeat; */
   font-size: 10px;
   border: 2px solid black;
   border-radius: 1.8em;
@@ -110,13 +107,3 @@
 .big-number-display {
   font-size: 8em;
 }
-
-/* p {
-  font-size: 1.9em;
-} */
-
-/* @media screen and (max-width: 768px) {
-  .unit-card {
-
-  }
-} */

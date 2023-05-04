@@ -1,22 +1,28 @@
 .big-stat-display {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 85% 15%;
   align-items: center;
-  justify-content: space-around;
-  height: 10em;
+  
+  height: 11em;
   width: 13.5em;
 }
 
 .stats-frame {
   background-image: url('../assets/stats-display.svg');
-  background-size: 12.9em;
+  background-size: 17em;
   background-position: center center;
   background-repeat: no-repeat;
+  height: inherit;
   width: 100%;
+
+  display: grid;
+  grid-template-rows: 1fr;
+  align-items: center;
 }
 
 .number {
-  font-size: 5em;
+  font-size: 6em;
 }
 
 .label {
