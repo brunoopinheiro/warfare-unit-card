@@ -30,6 +30,7 @@ export default function Card({ formValues }) {
   } = formValues;
 
   const tags = `${unitExperience.toUpperCase()}, ${unitEquipment.toUpperCase()}, ${ancestry.toUpperCase() || 'HUMAN'}, ${unitType.toUpperCase()}`;
+  const tierRoman = ['I', 'II', 'III', 'IV', 'V'];
   const traitsArr = stringToArray(traits);
   const unitIcon = getUnitIcon(unitType);
   
@@ -38,7 +39,7 @@ export default function Card({ formValues }) {
     <div className="card-container">
       <div className="unit-card">
         <div className="left-column">
-          <TopDisplay number={ tier } label="TIER" />
+          <TopDisplay number={ tierRoman[tier - 1] } label="TIER" />
           <img src={ unitIcon } alt="unit type icon" className="type-icon" />
           <DamageDisplay dmg={ dmg } numberAtks={ numberAtks } />
         </div>
