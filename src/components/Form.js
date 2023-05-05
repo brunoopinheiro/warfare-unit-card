@@ -108,6 +108,7 @@ export default function Form({ getFormValues }) {
             <input
               type="number"
               className="number-input"
+              max="99"
               { ...getNativeInputProps('atk') }
             />
           </label>
@@ -116,6 +117,7 @@ export default function Form({ getFormValues }) {
             <input
               type="number"
               className="number-input"
+              max="99"
               { ...getNativeInputProps('def') }
             />
           </label>
@@ -124,6 +126,7 @@ export default function Form({ getFormValues }) {
             <input
               type="number"
               className="number-input"
+              max="99"
               { ...getNativeInputProps('pow') }
             />
           </label>
@@ -132,6 +135,7 @@ export default function Form({ getFormValues }) {
             <input
               type="number"
               className="number-input"
+              max="99"
               { ...getNativeInputProps('tou') }
             />
           </label>
@@ -140,6 +144,7 @@ export default function Form({ getFormValues }) {
             <input
               type="number"
               className="number-input"
+              max="99"
               { ...getNativeInputProps('mor') }
             />
           </label>
@@ -148,6 +153,7 @@ export default function Form({ getFormValues }) {
             <input
               type="number"
               className="number-input"
+              max="99"
               { ...getNativeInputProps('com') }
             />
           </label>
@@ -158,6 +164,7 @@ export default function Form({ getFormValues }) {
             <input
               type="number"
               className="number-input"
+              max="9"
               { ...getNativeInputProps('numberAtks') }
             />
           </label>
@@ -165,6 +172,7 @@ export default function Form({ getFormValues }) {
             <span>Damage</span>
             <input
               type="number"
+              max="9"
               className="number-input"
               { ...getNativeInputProps('dmg') }
             />

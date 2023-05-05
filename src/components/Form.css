@@ -36,6 +36,8 @@ label {
   flex-direction: column;
   height: 6em;
   justify-content: space-around;
+  align-items: center;
+  margin: 0.3em;
 }
 
 label > span, fieldset > legend {
@@ -74,4 +76,5 @@ input, select {
 textarea {
   font-weight: 200;
   resize: vertical;
+  width: 100%;
 }
