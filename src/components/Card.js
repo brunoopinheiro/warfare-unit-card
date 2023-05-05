@@ -1,6 +1,7 @@
 import React from 'react';
 import './Card.css';
 import stringToArray from '../utils/stringToArray';
+import downloadAsPng from '../utils/downloadAsPng';
 import getUnitIcon from '../assets';
 import StatsDisplay from './StatsDisplay';
 import DamageDisplay from './DamageDisplay';
@@ -33,11 +34,17 @@ export default function Card({ formValues }) {
   const tierRoman = ['I', 'II', 'III', 'IV', 'V'];
   const traitsArr = stringToArray(traits);
   const unitIcon = getUnitIcon(unitType);
+
+  const downloadHandler = () => {
+    const domElement = document.getElementById('unit-card');
+    const cardName = unitName;
+    downloadAsPng(domElement, cardName);
+  }
   
 
   return (
     <div className="card-container">
-      <div className="unit-card">
+      <div className="unit-card" id="unit-card">
         <div className="left-column">
           <TopDisplay number={ tierRoman[tier - 1] } label="TIER" />
           <img src={ unitIcon } alt="unit type icon" className="type-icon" />
@@ -64,7 +71,7 @@ export default function Card({ formValues }) {
         </div>
       </div>
       <button
-        onClick={ () => console.log(document.getElementsByClassName('unit-card')[0]) }
+        onClick={ downloadHandler }
       >
         Download Card!
       </button>
