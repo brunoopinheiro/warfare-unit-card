@@ -1,0 +1,22 @@
+.top-display {
+  display: flex;
+  flex-direction: column;
+  width: 9em;
+}
+
+.t-display-frame {
+  background-image: url('../assets/top-display.svg');
+  background-position: center center;
+  background-size: 17em;
+  background-repeat: no-repeat;
+}
+
+.t-number {
+  font-size: 7.5em;
+}
+
+.t-label {
+  font-family: 'Cinzel', serif;
+  font-weight: 700;
+  font-size: 1.5em;
+}
