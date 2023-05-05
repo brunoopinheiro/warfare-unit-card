@@ -1,0 +1,13 @@
+:root {
+  --font-light: rgb(211, 209, 209);
+}
+
+footer {
+  font-size: 1.4em;
+}
+
+a {
+  color: var(--font-light);
+  text-decoration: none;
+  font-weight: 600;
+}
