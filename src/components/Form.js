@@ -20,6 +20,7 @@ export default function Form({ getFormValues }) {
               type="text"
               className="text-input"
               placeholder="Human Infantry"
+              maxLength="20"
               { ...getNativeInputProps('unitName') }
               required
             />
@@ -30,6 +31,7 @@ export default function Form({ getFormValues }) {
               type="text"
               className="text-input"
               placeholder="Lord Saxton"
+              maxLength="37"
               { ...getNativeInputProps('commanderName') }
             />
           </label>
@@ -39,6 +41,7 @@ export default function Form({ getFormValues }) {
               type="text"
               className="text-input"
               placeholder="Human"
+              maxLength="12"
               { ...getNativeInputProps('ancestry') }
               required
             />
