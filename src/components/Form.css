@@ -1,0 +1,16 @@
+:root {
+  --font-light: rgb(211, 209, 209);
+}
+
+.form-container {
+  margin: 2em auto;
+}
+
+form {
+  display: grid;
+  grid-auto-columns: 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+  gap: 1em;
+
+  margin-bottom: 1em;
+}

@@ -4,6 +4,8 @@
   border: 2px solid black;
   border-radius: 1.8em;
   margin: 2em auto;
+  background-color: whitesmoke;
+  color: black;
 
   display: grid;
   grid-template-columns: 1.5fr 8.5fr;
