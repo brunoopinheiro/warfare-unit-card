@@ -1,5 +1,6 @@
 :root {
   --font-light: rgb(211, 209, 209);
+  --gray-background: #161616;
 }
 
 .form-container {
@@ -9,8 +10,68 @@
 form {
   display: grid;
   grid-auto-columns: 1fr;
-  grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 0.5fr 1fr 0.55fr 0.5fr 1fr;
   gap: 1em;
+  background-color: rgba(48, 47, 47, 0.438);
 
+  border-radius: 2.5em;
+  margin: auto 10%;
+  padding: 1em 1em;
   margin-bottom: 1em;
+  width: inherit;
+}
+
+form div, form fieldset {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+label {
+  color: var(--font-light);
+  font-size: 1.4em;
+  font-weight: 600;
+  display: flex;
+  flex-direction: column;
+  height: 6em;
+  justify-content: space-around;
+}
+
+label > span, fieldset > legend {
+  font-family: 'Cinzel', serif;
+  font-size: 1.6em;
+  color: var(--font-light);
+}
+
+fieldset {
+  border-radius: 2.5em;
+}
+
+input, select, textarea {
+  line-height: 2em;
+  font-weight: 600;
+  font-size: 1.4em;
+  background-color: var(--gray-background);
+  color: var(--font-light);
+  padding-left: 0.8em;
+}
+
+input, select {
+  height: 2.3em;
+  width: 13em;
+}
+
+.number-input {
+  width: 3em;
+}
+
+.textarea-label {
+  height: fit-content;
+  max-height: 100%;
+}
+
+textarea {
+  font-weight: 200;
+  resize: vertical;
 }

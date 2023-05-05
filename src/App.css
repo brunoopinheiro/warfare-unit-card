@@ -13,7 +13,7 @@
 
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 1fr 3fr 10fr 1fr;
+  grid-template-rows: 0.3fr 2.5fr 2fr 0.5fr;
   row-gap: 1em;
   align-items: center;
 }

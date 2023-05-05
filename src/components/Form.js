@@ -15,27 +15,30 @@ export default function Form({ getFormValues }) {
       <form>
         <div className="text-inputs">
           <label>
+          <span>Unit Name</span>
             <input
               type="text"
-              placeholder="Unit Name"
+              className="text-input"
+              placeholder="Human Infantry"
               { ...getNativeInputProps('unitName') }
               required
             />
-            <span>Unit Name</span>
           </label>
           <label>
-            <span>Commander: </span>
+            <span>Commander</span>
             <input
               type="text"
-              placeholder="Commander Name"
+              className="text-input"
+              placeholder="Lord Saxton"
               { ...getNativeInputProps('commanderName') }
             />
           </label>
           <label>
-            <span>Ancestry: </span>
+            <span>Ancestry</span>
             <input
               type="text"
-              placeholder="Ancestry"
+              className="text-input"
+              placeholder="Human"
               { ...getNativeInputProps('ancestry') }
               required
             />
@@ -43,7 +46,7 @@ export default function Form({ getFormValues }) {
         </div>
         <div className="select inputs">
           <label>
-            <span>Type: </span>
+            <span>Type</span>
             <select
               name="unitType"
               {...getNativeInputProps('unitType') }
@@ -57,7 +60,7 @@ export default function Form({ getFormValues }) {
             </select>
           </label>
           <label>
-            <span>Unit Size: </span>
+            <span>Unit Size</span>
             <select
               name="unitSize"
               { ...getNativeInputProps('unitSize') }
@@ -70,7 +73,7 @@ export default function Form({ getFormValues }) {
             </select>
           </label>
           <label>
-            <span>Experience: </span>
+            <span>Experience</span>
             <select
               name="unitExperience"
               { ...getNativeInputProps('unitExperience') }
@@ -83,7 +86,7 @@ export default function Form({ getFormValues }) {
             </select>
           </label>
           <label>
-            <span>Equipment: </span>
+            <span>Equipment</span>
             <select
               name="unitEquipment"
               { ...getNativeInputProps('unitEquipment') }
@@ -98,75 +101,86 @@ export default function Form({ getFormValues }) {
         <fieldset>
           <legend>Unit Statistics</legend>
           <label>
-            <span>ATK: </span>
+            <span>ATK</span>
             <input
               type="number"
+              className="number-input"
               { ...getNativeInputProps('atk') }
             />
           </label>
           <label>
-            <span>DEF: </span>
+            <span>DEF</span>
             <input
               type="number"
+              className="number-input"
               { ...getNativeInputProps('def') }
             />
           </label>
           <label>
-            <span>POW: </span>
+            <span>POW</span>
             <input
               type="number"
+              className="number-input"
               { ...getNativeInputProps('pow') }
             />
           </label>
           <label>
-            <span>TOU: </span>
+            <span>TOU</span>
             <input
               type="number"
+              className="number-input"
               { ...getNativeInputProps('tou') }
             />
           </label>
           <label>
-            <span>MOR: </span>
+            <span>MOR</span>
             <input
               type="number"
+              className="number-input"
               { ...getNativeInputProps('mor') }
             />
           </label>
           <label>
-            <span>COM: </span>
+            <span>COM</span>
             <input
               type="number"
+              className="number-input"
               { ...getNativeInputProps('com') }
             />
           </label>
         </fieldset>
         <div className="dmg-inputs">
           <label>
-            <span>Number of Attacks: </span>
+            <span>Number of Attacks</span>
             <input
               type="number"
+              className="number-input"
               { ...getNativeInputProps('numberAtks') }
             />
           </label>
           <label>
-            <span>Damage: </span>
+            <span>Damage</span>
             <input
               type="number"
+              className="number-input"
               { ...getNativeInputProps('dmg') }
             />
           </label>
           <label>
-            <span>Tier: </span>
+            <span>Tier</span>
             <input
               type="number"
               max="5"
+              className="number-input"
               { ...getNativeInputProps('tier') }
             />
           </label>
         </div>
-        <label>
-          <span>Traits: </span>
+        <label className="textarea-label">
+          <span>Traits</span>
           <textarea
+            rows="5"
+            maxLength="500"
             { ...getNativeInputProps('traits') }
           />
         </label>
