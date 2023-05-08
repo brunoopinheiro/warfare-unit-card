@@ -2,7 +2,6 @@ import React from 'react';
 import './Card.css';
 import stringToArray from '../utils/stringToArray';
 import downloadAsPng from '../utils/downloadAsPng';
-import saveCardToLocalStorage from '../utils/saveCardToLocalStorage';
 import getUnitIcon from '../assets';
 import StatsDisplay from './StatsDisplay';
 import DamageDisplay from './DamageDisplay';
@@ -10,8 +9,7 @@ import TopDisplay from './TopDisplay';
 import Nameplate from './Nameplate';
 import TraitsDisplay from './TraitsDisplay';
 
-export default function Card({ formValues }) {
-  const storageKey = 'savedCards';
+export default function Card({ formValues, saveCardHandler }) {
   const {
     unitName,
     commanderName,
@@ -43,9 +41,9 @@ export default function Card({ formValues }) {
     downloadAsPng(domElement, cardName);
   }
 
-  const saveCardHandler = () => {
-    saveCardToLocalStorage(formValues, storageKey);
-  }
+  // const saveCardHandler = () => {
+  //   saveCardToLocalStorage(formValues, storageKey);
+  // }
   
 
   return (
