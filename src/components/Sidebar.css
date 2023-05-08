@@ -1,0 +1,11 @@
+.sidebar {
+  border: 1px dashed red;
+  color: aliceblue;
+  display: flex;
+  flex-direction: column;
+  font-weight: 700;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 20em;
+}

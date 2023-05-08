@@ -2,6 +2,7 @@ import React from 'react';
 import './Card.css';
 import stringToArray from '../utils/stringToArray';
 import downloadAsPng from '../utils/downloadAsPng';
+import saveCardToLocalStorage from '../utils/saveCardToLocalStorage';
 import getUnitIcon from '../assets';
 import StatsDisplay from './StatsDisplay';
 import DamageDisplay from './DamageDisplay';
@@ -10,6 +11,7 @@ import Nameplate from './Nameplate';
 import TraitsDisplay from './TraitsDisplay';
 
 export default function Card({ formValues }) {
+  const storageKey = 'savedCards';
   const {
     unitName,
     commanderName,
@@ -39,6 +41,10 @@ export default function Card({ formValues }) {
     const domElement = document.getElementById('unit-card');
     const cardName = unitName;
     downloadAsPng(domElement, cardName);
+  }
+
+  const saveCardHandler = () => {
+    saveCardToLocalStorage(formValues, storageKey);
   }
   
 
@@ -73,7 +79,12 @@ export default function Card({ formValues }) {
       <button
         onClick={ downloadHandler }
       >
-        Download Card!
+        Download As Image!
+      </button>
+      <button
+        onClick={ saveCardHandler }
+      >
+        Save Card!
       </button>
     </div>
   );

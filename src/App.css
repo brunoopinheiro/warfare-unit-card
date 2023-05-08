@@ -4,7 +4,7 @@
   font-size: 10px;
 }
 
-.App {
+main {
   text-align: center;
   color: var(--font-light);
 
@@ -33,6 +33,7 @@ button {
   transition: all .4s cubic-bezier(0.645, 0.045, 0.355, 1);
   cursor: pointer;
   position: relative;
+  margin: 0 1em;
 }
 
 button::after, button::before {
