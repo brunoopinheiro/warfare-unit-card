@@ -198,6 +198,7 @@ export default function Form({ getFormValues }) {
       </form>
       <button
         type="button"
+        className="standard-button"
         onClick={ returnValues }
       >
         Update Card

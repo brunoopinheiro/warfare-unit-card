@@ -21,7 +21,7 @@ h1 {
   font-size: 7.6em;
 }
 
-button {
+.standard-button {
   padding: 1.5em 4em;
   background: black;
   border: 0;
@@ -36,7 +36,7 @@ button {
   margin: 0 1em;
 }
 
-button::after, button::before {
+.standard-button::after, .standard-button::before {
   content: "";
   position: absolute;
   top: 50%;
@@ -46,7 +46,7 @@ button::after, button::before {
   transition: all .4s cubic-bezier(0.645, 0.045, 0.355, 1);
 }
 
-button::after {
+.standard-button::after {
   width: 3em;
   height: 0.1em;
   background: var(--font-light);
@@ -54,7 +54,7 @@ button::after {
   margin-top: 0;
 }
 
-button::before {
+.standard-button::before {
   content: "";
   transform: rotate(-135deg) translateX(50%);
   width: 1.1em;
@@ -65,11 +65,11 @@ button::before {
   margin-top: -0.1em;
 }
 
-button:hover {
+.standard-button:hover {
   padding: 1.5em 6em 1.5em 2em;
 }
 
-button:hover::after, button:hover::before {
+.standard-button:hover::after, .standard-button:hover::before {
   opacity: 1;
   right: 1.5em;
 }

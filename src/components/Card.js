@@ -77,11 +77,13 @@ export default function Card({ formValues }) {
         </div>
       </div>
       <button
+        className="standard-button"
         onClick={ downloadHandler }
       >
         Download As Image
       </button>
       <button
+        className="standard-button"
         onClick={ saveCardHandler }
       >
         Save Card

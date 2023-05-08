@@ -9,3 +9,15 @@
   right: 0;
   width: 20em;
 }
+
+.stored-card {
+  display: flex;
+  flex-direction: row;
+  height: 1.8em;
+  margin: 0.5em 0;
+}
+
+.sidebar-nameplate {
+  width: 15em;
+  overflow: hidden;
+}
