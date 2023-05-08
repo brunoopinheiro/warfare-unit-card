@@ -200,7 +200,7 @@ export default function Form({ getFormValues }) {
         type="button"
         onClick={ returnValues }
       >
-        Update Card!
+        Update Card
       </button>
     </div>
   );

@@ -79,12 +79,12 @@ export default function Card({ formValues }) {
       <button
         onClick={ downloadHandler }
       >
-        Download As Image!
+        Download As Image
       </button>
       <button
         onClick={ saveCardHandler }
       >
-        Save Card!
+        Save Card
       </button>
     </div>
   );
