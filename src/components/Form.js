@@ -2,8 +2,8 @@ import useFormState from "use-form-state/dist/useFormState";
 import formInitialValues from "../utils/formInitialValues";
 import './Form.css';
 
-export default function Form({ getFormValues }) {
-  const { getNativeInputProps, values } = useFormState(formInitialValues);
+export default function Form({ getFormValues, formReloadedState }) {
+  const { getNativeInputProps, values } = useFormState(formReloadedState || formInitialValues);
 
   const returnValues = () => {
     const formValues = values;
@@ -198,9 +198,10 @@ export default function Form({ getFormValues }) {
       </form>
       <button
         type="button"
+        className="standard-button"
         onClick={ returnValues }
       >
-        Update Card!
+        Update Card
       </button>
     </div>
   );

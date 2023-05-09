@@ -1,22 +1,52 @@
 import { useState } from 'react';
 import './App.css';
-import Form from './components/Form';
 import formInitialValues from './utils/formInitialValues';
+import { getCardValuesById, loadAllCards } from './utils/localStorage/loadCardFromLocalStorage';
+import saveCardToLocalStorage from './utils/localStorage/saveCardToLocalStorage';
+import { deleteAllFromLocalStorage, deleteByIdFromLocalStorage } from './utils/localStorage/deleteFromLocalStorage';
+import Form from './components/Form';
 import Card from './components/Card';
 import Footer from './components/Footer';
+import Sidebar from './components/Sidebar';
 
 function App() {
+  const storageKey = 'savedCards';
   const [formValues, setValues] = useState(formInitialValues);
+  const [storedCards, setStoredCards] = useState(loadAllCards(storageKey));
+
   const getFormValues = (values) => {
     setValues(values);
   };
 
+  const saveCardHandler = () => {
+    saveCardToLocalStorage(formValues, storageKey);
+    setStoredCards(loadAllCards(storageKey));
+  }
+
+  const deleteAll = () => {
+    deleteAllFromLocalStorage(storageKey);
+    setStoredCards(loadAllCards(storageKey));
+  }
+
+  const deleteOne = (cardId) => {
+    deleteByIdFromLocalStorage(storageKey, cardId);
+    setStoredCards(loadAllCards(storageKey));
+  }
+
+  const reloadFromLocalStorage = (cardId) => {
+    const cardValues = getCardValuesById(storageKey, cardId);
+    setValues(cardValues);
+  }
+
   return (
     <div className="App">
-      <h1>Warfare Unit Card</h1>
-      <Form getFormValues={ getFormValues } />
-      <Card formValues={ formValues } />
-      <Footer />
+      <main>
+        <h1>Warfare Unit Card</h1>
+        <Form getFormValues={ getFormValues } formReloadedState={ formValues } />
+        <Card formValues={ formValues } saveCardHandler={ saveCardHandler } />
+        <Footer />
+      </main>
+      <Sidebar storedCards={ storedCards } handlers={ { deleteAll, deleteOne, reloadFromLocalStorage } } />
     </div>
   );
 }

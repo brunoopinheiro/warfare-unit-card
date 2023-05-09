@@ -9,7 +9,7 @@ import TopDisplay from './TopDisplay';
 import Nameplate from './Nameplate';
 import TraitsDisplay from './TraitsDisplay';
 
-export default function Card({ formValues }) {
+export default function Card({ formValues, saveCardHandler }) {
   const {
     unitName,
     commanderName,
@@ -40,6 +40,10 @@ export default function Card({ formValues }) {
     const cardName = unitName;
     downloadAsPng(domElement, cardName);
   }
+
+  // const saveCardHandler = () => {
+  //   saveCardToLocalStorage(formValues, storageKey);
+  // }
   
 
   return (
@@ -71,9 +75,16 @@ export default function Card({ formValues }) {
         </div>
       </div>
       <button
+        className="standard-button"
         onClick={ downloadHandler }
       >
-        Download Card!
+        Download As Image
+      </button>
+      <button
+        className="standard-button"
+        onClick={ saveCardHandler }
+      >
+        Save Card
       </button>
     </div>
   );
