@@ -142,7 +142,8 @@
 }
 
 .stored-card button:hover,
-.clear-list-button:hover {
+.clear-list-button:hover,
+.stored-card:hover {
   transform: scale(1.05);
 }
 
