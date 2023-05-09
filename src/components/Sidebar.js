@@ -27,28 +27,36 @@ export default function Sidebar({ storedCards, handlers }) {
           storedCards.map(([cardId, cardValue]) => (
             <div
               key={cardId}
-              title="Changing these informations will create a new card on save."
               className="stored-card"
             >
-              <span
+              <p
+                title={ `${cardValue.unitName} - T${cardValue.tier} - ${cardValue.commanderName}` }
                 className="sidebar-nameplate"
               >
                 {`${cardValue.unitName} - T${cardValue.tier} - ${cardValue.commanderName}`}
-              </span>
+              </p>
               <button
+                title="edit"
                 onClick={ () => reloadFromLocalStorage(cardId) }
               >
-                Load
+                <span class="material-symbols-rounded">
+                  edit
+                </span>
               </button>
               <button
+                title="delete"
                 onClick={ () => deleteOne(cardId) }
               >
-                X
+                <span class="material-symbols-rounded">
+                  delete
+                </span>
               </button>
             </div>
           ))
         }
         <button
+          className="clear-list-button"
+          title="clear list"
           onClick={ () => deleteAll() }
         >
           Clear List

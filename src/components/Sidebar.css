@@ -1,6 +1,7 @@
 :root {
   --dark-gray: #161616;
   --light-gray:  rgb(236, 236, 236);
+  --accent-color:  rgb(109, 109, 109);
 
   --background: var(--dark-gray);
   --foreground: var(--light-gray);
@@ -93,7 +94,7 @@
   justify-content: flex-start;
   font-weight: 700;
   
-  padding: 0.5em 1em;
+  padding: 0.5em 0.8em;
   padding-top: calc(var(--hamburguer-height) + var(--hamburger-margin) + 1em);
   /* background-color: rgba(236, 236, 236, 0.06); */
   background-color: var(--foreground);
@@ -111,11 +112,50 @@
 .stored-card {
   display: flex;
   flex-direction: row;
-  height: 1.8em;
-  margin: 0.5em 0;
+  align-items: center;
+
+  padding: 0.4em;
+  height: 3em;
+  margin: 0.2em 0;
+  border-radius: 4px;
+
+  background-color: var(--dark-gray);
+  color: var(--light-gray);
+  box-shadow: 0 0 0 1.5px var(--accent-color);
 }
 
 .sidebar-nameplate {
-  width: 15em;
+  font-size: 1.45em;
+  width: 20em;
   overflow: hidden;
+  white-space: nowrap;
+  cursor: help;
+}
+
+.stored-card button,
+.sidebar-container button {
+  cursor: pointer;
+  border: none;
+}
+
+.stored-card button:hover,
+.clear-list-button:hover {
+  transform: scale(1.05);
+}
+
+.stored-card button {
+  margin: 0 0.3em;
+  color: var(--accent-color);
+  background-color: transparent;
+}
+
+.clear-list-button {
+  background-color: var(--accent-color);
+  border-radius: 8px;
+  box-shadow: 0 0 0 1.5px var(--dark-gray);
+  color: var(--light-gray);
+  font-weight: 600;
+  padding: 0.4em 0;
+  margin-top: 0.5em;
+  text-transform: uppercase;
 }
