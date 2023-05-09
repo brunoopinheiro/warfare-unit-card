@@ -10,45 +10,50 @@ export default function Sidebar({ storedCards, handlers }) {
   }, [storedCards]);
   
   return (
-    <div className="sidebar">
-      {
-        isEmpty ?
-        <div className="stored-card">
-          <span
-            className="sidebar-nameplate"
-          >
-            No saved cards...
-          </span>
-        </div> :
-        storedCards.map(([cardId, cardValue]) => (
-          <div
-            key={cardId}
-            title="Changing these informations will create a new card on save."
-            className="stored-card"
-          >
+    <div className="sidebar-container">
+      <label className="hamburger-menu">
+        <input type="checkbox" />
+      </label>
+      <aside className="sidebar">
+        {
+          isEmpty ?
+          <div className="stored-card">
             <span
               className="sidebar-nameplate"
             >
-              {`${cardValue.unitName} - T${cardValue.tier} - ${cardValue.commanderName}`}
+              No saved cards...
             </span>
-            <button
-              onClick={ () => reloadFromLocalStorage(cardId) }
+          </div> :
+          storedCards.map(([cardId, cardValue]) => (
+            <div
+              key={cardId}
+              title="Changing these informations will create a new card on save."
+              className="stored-card"
             >
-              Load
-            </button>
-            <button
-              onClick={ () => deleteOne(cardId) }
-            >
-              X
-            </button>
-          </div>
-        ))
-      }
-      <button
-        onClick={ () => deleteAll() }
-      >
-        Clear List
-      </button>
+              <span
+                className="sidebar-nameplate"
+              >
+                {`${cardValue.unitName} - T${cardValue.tier} - ${cardValue.commanderName}`}
+              </span>
+              <button
+                onClick={ () => reloadFromLocalStorage(cardId) }
+              >
+                Load
+              </button>
+              <button
+                onClick={ () => deleteOne(cardId) }
+              >
+                X
+              </button>
+            </div>
+          ))
+        }
+        <button
+          onClick={ () => deleteAll() }
+        >
+          Clear List
+        </button>
+      </aside>
     </div>
   );
 }

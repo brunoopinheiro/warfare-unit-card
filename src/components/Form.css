@@ -28,7 +28,7 @@ form div, form fieldset {
   align-items: center;
 }
 
-label {
+form label {
   color: var(--font-light);
   font-size: 1.4em;
   font-weight: 600;
@@ -50,7 +50,7 @@ fieldset {
   border-radius: 2.5em;
 }
 
-input, select, textarea {
+form input, form select, form textarea {
   line-height: 2em;
   font-weight: 600;
   font-size: 1.4em;
@@ -59,7 +59,7 @@ input, select, textarea {
   padding-left: 0.8em;
 }
 
-input, select {
+form input, form select {
   height: 2.3em;
   width: 13em;
 }
@@ -73,7 +73,7 @@ input, select {
   max-height: 100%;
 }
 
-textarea {
+form textarea {
   font-weight: 200;
   resize: vertical;
   width: 100%;

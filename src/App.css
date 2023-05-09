@@ -4,6 +4,10 @@
   font-size: 10px;
 }
 
+.App {
+  position: absolute;
+}
+
 main {
   text-align: center;
   color: var(--font-light);
