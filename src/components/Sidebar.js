@@ -23,6 +23,7 @@ export default function Sidebar({ storedCards, handlers }) {
         storedCards.map(([cardId, cardValue]) => (
           <div
             key={cardId}
+            title="Changing these informations will create a new card on save."
             className="stored-card"
           >
             <span
