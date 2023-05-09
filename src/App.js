@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import './App.css';
 import formInitialValues from './utils/formInitialValues';
-import { loadAllCards } from './utils/localStorage/loadCardFromLocalStorage';
+import { getCardValuesById, loadAllCards } from './utils/localStorage/loadCardFromLocalStorage';
 import saveCardToLocalStorage from './utils/localStorage/saveCardToLocalStorage';
 import { deleteAllFromLocalStorage, deleteByIdFromLocalStorage } from './utils/localStorage/deleteFromLocalStorage';
 import Form from './components/Form';
@@ -33,15 +33,20 @@ function App() {
     setStoredCards(loadAllCards(storageKey));
   }
 
+  const reloadFromLocalStorage = (cardId) => {
+    const cardValues = getCardValuesById(storageKey, cardId);
+    setValues(cardValues);
+  }
+
   return (
     <div className="App">
       <main>
         <h1>Warfare Unit Card</h1>
-        <Form getFormValues={ getFormValues } />
+        <Form getFormValues={ getFormValues } formReloadedState={ formValues } />
         <Card formValues={ formValues } saveCardHandler={ saveCardHandler } />
         <Footer />
       </main>
-      <Sidebar storedCards={ storedCards } handlers={ { deleteAll, deleteOne } } />
+      <Sidebar storedCards={ storedCards } handlers={ { deleteAll, deleteOne, reloadFromLocalStorage } } />
     </div>
   );
 }
