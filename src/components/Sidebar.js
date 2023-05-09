@@ -44,11 +44,11 @@ export default function Sidebar({ storedCards, handlers }) {
                 </span>
               </button>
               <button
-                title="delete"
+                title="remove"
                 onClick={ () => deleteOne(cardId) }
               >
                 <span class="material-symbols-rounded">
-                  delete
+                  person_remove
                 </span>
               </button>
             </div>

@@ -1,7 +1,7 @@
 :root {
   --dark-gray: #161616;
   --light-gray:  rgb(236, 236, 236);
-  --accent-color:  rgb(109, 109, 109);
+  --accent-color:  rgb(148, 148, 148);
 
   --background: var(--dark-gray);
   --foreground: var(--light-gray);
@@ -39,10 +39,10 @@
   z-index: 3;
 }
 
-.hamburger-menu:has(input:checked) {
+/* .hamburger-menu:has(input:checked) {
   --foreground: var(--dark-gray);
   --background: var(--light-gray);
-}
+} */
 
 .hamburger-menu:has(input:focus-visible)::before,
 .hamburger-menu:has(input:focus-visible)::after,
@@ -96,8 +96,8 @@
   
   padding: 0.5em 0.8em;
   padding-top: calc(var(--hamburguer-height) + var(--hamburger-margin) + 1em);
-  /* background-color: rgba(236, 236, 236, 0.06); */
-  background-color: var(--foreground);
+  background-color: rgba(236, 236, 236, 0.06);
+  /* background-color: var(--foreground); */
   color: var(--background);
   max-height: 100%;
   min-height: 100%;
@@ -126,6 +126,7 @@
 
 .sidebar-nameplate {
   font-size: 1.45em;
+  font-weight: 400;
   width: 20em;
   overflow: hidden;
   white-space: nowrap;
