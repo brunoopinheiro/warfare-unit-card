@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import './Sidebar.css';
 
 export default function Sidebar({ storedCards, handlers }) {
-  const { deleteAll } = handlers;
+  const { deleteAll, deleteOne } = handlers;
   const [isEmpty, setIsEmpty] = useState(true);
 
   useEffect(() => {
@@ -31,7 +31,11 @@ export default function Sidebar({ storedCards, handlers }) {
               {`${cardValue.unitName} - T${cardValue.tier} - ${cardValue.commanderName}`}
             </span>
             <button>Load</button>
-            <button>X</button>
+            <button
+              onClick={ () => deleteOne(cardId) }
+            >
+              X
+            </button>
           </div>
         ))
       }

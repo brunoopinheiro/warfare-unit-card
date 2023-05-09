@@ -3,7 +3,7 @@ import './App.css';
 import formInitialValues from './utils/formInitialValues';
 import { loadAllCards } from './utils/localStorage/loadCardFromLocalStorage';
 import saveCardToLocalStorage from './utils/localStorage/saveCardToLocalStorage';
-import { deleteAllFromLocalStorage } from './utils/localStorage/deleteFromLocalStorage';
+import { deleteAllFromLocalStorage, deleteByIdFromLocalStorage } from './utils/localStorage/deleteFromLocalStorage';
 import Form from './components/Form';
 import Card from './components/Card';
 import Footer from './components/Footer';
@@ -28,6 +28,11 @@ function App() {
     setStoredCards(loadAllCards(storageKey));
   }
 
+  const deleteOne = (cardId) => {
+    deleteByIdFromLocalStorage(storageKey, cardId);
+    setStoredCards(loadAllCards(storageKey));
+  }
+
   return (
     <div className="App">
       <main>
@@ -36,7 +41,7 @@ function App() {
         <Card formValues={ formValues } saveCardHandler={ saveCardHandler } />
         <Footer />
       </main>
-      <Sidebar storedCards={ storedCards } handlers={ {deleteAll} } />
+      <Sidebar storedCards={ storedCards } handlers={ { deleteAll, deleteOne } } />
     </div>
   );
 }
