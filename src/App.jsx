@@ -88,6 +88,7 @@ function App() {
     <div className="app">
       <header className="app-header">
         <div className="app-title">
+          <img className="app-logo" src="/logo-mark.svg" alt="" width="40" height="40" />
           <h1>Warfare Unit Card</h1>
           <span className="app-subtitle">Unit cards for Kingdoms &amp; Warfare</span>
         </div>
