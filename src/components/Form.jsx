@@ -1,6 +1,9 @@
-import useFormState from "use-form-state/dist/useFormState";
+import useFormStateModule from "use-form-state";
 import formInitialValues from "../utils/formInitialValues";
 import './Form.css';
+
+// use-form-state ships Babel CJS; Vite's pre-bundler may hand back the whole exports object
+const useFormState = useFormStateModule.default ?? useFormStateModule;
 
 export default function Form({ getFormValues, formReloadedState }) {
   const { getNativeInputProps, values } = useFormState(formReloadedState || formInitialValues);
