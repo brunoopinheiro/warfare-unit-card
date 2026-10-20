@@ -1,0 +1,46 @@
+@import './index.css';
+
+.privacy-header {
+  padding: 14px var(--space-6);
+  border-bottom: 1px solid var(--line);
+}
+
+.privacy-home {
+  font-family: var(--font-display);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.privacy {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: var(--space-6) var(--space-4) var(--space-7);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.privacy h1 {
+  font-family: var(--font-display);
+  font-size: var(--text-2xl);
+  font-weight: 800;
+  line-height: 1.1;
+}
+
+.privacy h2 {
+  margin-top: var(--space-4);
+  font-family: var(--font-display);
+  font-size: var(--text-md);
+  font-weight: 700;
+}
+
+.privacy .updated {
+  color: var(--text-muted);
+  font-size: var(--text-sm);
+}
+
+@media (max-width: 767px) {
+  .privacy-header {
+    padding: 12px var(--space-4);
+  }
+}
