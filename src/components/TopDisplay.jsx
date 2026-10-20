@@ -1,12 +1,8 @@
-import './TopDisplay.css';
-
-export default function TopDisplay({ number, label}) {
+export default function TopDisplay({ value, label }) {
   return (
     <div className="top-display">
-      <div className="t-display-frame">
-        <span className="t-number">{ number }</span>
-      </div>
-      <span className="t-label">{ label }</span>
+      <span className="top-value">{ value }</span>
+      <span className="card-caption">{ label }</span>
     </div>
   );
 }

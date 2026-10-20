@@ -1,0 +1,45 @@
+:root {
+  /* App chrome: war table */
+  --ink-900: #15110C;
+  --ink-800: #1E1912;
+  --ink-700: #2A231A;
+  --line: #3A3127;
+  --line-strong: #8A7A60;
+  --text: #EDE4D3;
+  --text-muted: #B5A88F;
+  --brass: #D4AE62;
+  --brass-hover: #E2C07A;
+  --ok: #9CC28A;
+  --danger: #E07A62;
+
+  /* Card: parchment and ink */
+  --parchment: #F2E8D2;
+  --parchment-deep: #E4D5B3;
+  --ink: #2B2219;
+  --ink-soft: #5C4B37;
+  --oxblood: #7E2B1F;
+
+  --font-display: 'Cinzel', Georgia, serif;
+  --font-body: 'Source Serif 4', Georgia, serif;
+
+  /* Type scale, ratio 1.25 on a 16px root */
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-md: 1.25rem;
+  --text-lg: 1.563rem;
+  --text-2xl: 2.441rem;
+
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2rem;
+  --space-7: 3rem;
+
+  --radius-control: 6px;
+  --radius-panel: 10px;
+  --target-min: 44px;
+  --motion: 160ms ease-out;
+}

@@ -1,49 +1,157 @@
-* {
-  padding: 0;
-  margin: 0;
-}
+@import './styles/tokens.css';
 
 *, *::after, *::before {
   box-sizing: border-box;
 }
 
-:root {
-  --gray-background: #161616;
-  --font-light: rgb(211, 209, 209);
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  color-scheme: dark;
 }
 
 body {
-  margin: 0;
-  padding: 0;
-  font-family: 'Source Serif Pro', serif;
+  min-height: 100vh;
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  line-height: 1.5;
+  color: var(--text);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  background-color: var(--gray-background);
-  background-image: linear-gradient(#2d2d2d 1.4px, transparent 1.4px), linear-gradient(to right, #2d2d2d 1.4px, var(--gray-background) 1.4px);
-  background-size: 2.8em 2.8em;
+  background-color: var(--ink-900);
+  background-image:
+    linear-gradient(rgba(237, 228, 211, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(237, 228, 211, 0.035) 1px, transparent 1px);
+  background-size: 28px 28px;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+button, input, select, textarea {
+  font: inherit;
+  color: inherit;
 }
 
-::-webkit-scrollbar {
-  width: 1em;
+:focus-visible {
+  outline: 2px solid var(--brass);
+  outline-offset: 2px;
 }
 
-::-webkit-scrollbar-track {
-  background-color: transparent;
+a {
+  color: var(--brass);
+  text-decoration: underline;
+  text-underline-offset: 3px;
 }
 
-::-webkit-scrollbar-thumb {
-  background-color: var(--gray-background);
-  border-radius: 4px;
-  border: 2px solid transparent;
-  background-clip: content-box;
+a:hover {
+  color: var(--brass-hover);
 }
 
-::-webkit-scrollbar-thumb:hover {
-  background-color: var(--font-light);
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+/* Shared controls */
+.btn {
+  min-height: var(--target-min);
+  padding: 0 var(--space-5);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius-control);
+  background: transparent;
+  color: var(--text);
+  font-family: var(--font-display);
+  font-size: var(--text-sm);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background-color var(--motion), border-color var(--motion);
+}
+
+.btn:hover {
+  border-color: var(--brass);
+}
+
+.btn-primary {
+  background: var(--brass);
+  border-color: var(--brass);
+  color: var(--ink-900);
+}
+
+.btn-primary:hover {
+  background: var(--brass-hover);
+  border-color: var(--brass-hover);
+}
+
+.btn-danger {
+  border-color: var(--danger);
+  color: var(--danger);
+}
+
+.btn-danger-solid {
+  background: var(--danger);
+  border-color: var(--danger);
+  color: var(--ink-900);
+}
+
+.btn:disabled {
+  opacity: 0.6;
+  cursor: progress;
+}
+
+.icon-btn {
+  width: var(--target-min);
+  height: var(--target-min);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-control);
+  background: transparent;
+  color: var(--text);
+  cursor: pointer;
+}
+
+.icon-btn:hover {
+  border-color: var(--brass);
+}
+
+.text-btn {
+  min-height: 36px;
+  padding: 0 var(--space-3);
+  border: 0;
+  border-radius: var(--radius-control);
+  background: transparent;
+  color: var(--brass);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  cursor: pointer;
+}
+
+.text-btn.danger {
+  color: var(--danger);
+}
+
+.hint {
+  font-size: var(--text-sm);
+  line-height: 1.45;
+  color: var(--text-muted);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    transition: none !important;
+    animation: none !important;
+  }
 }

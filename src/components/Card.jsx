@@ -1,15 +1,14 @@
-import React from 'react';
+import { forwardRef } from 'react';
 import './Card.css';
-import stringToArray from '../utils/stringToArray';
-import downloadAsPng from '../utils/downloadAsPng';
 import getUnitIcon from '../assets';
+import { toTitle, formatPlain, formatSigned, toRoman, parseTraits } from '../utils/cardFormat';
 import StatsDisplay from './StatsDisplay';
 import DamageDisplay from './DamageDisplay';
 import TopDisplay from './TopDisplay';
 import Nameplate from './Nameplate';
 import TraitsDisplay from './TraitsDisplay';
 
-export default function Card({ formValues, saveCardHandler }) {
+const Card = forwardRef(function Card({ formValues, inkSaver = false }, ref) {
   const {
     unitName,
     commanderName,
@@ -30,62 +29,38 @@ export default function Card({ formValues, saveCardHandler }) {
     traits,
   } = formValues;
 
-  const tags = `${unitExperience.toUpperCase()}, ${unitEquipment.toUpperCase()}, ${ancestry.toUpperCase() || 'HUMAN'}, ${unitType.toUpperCase()}`;
-  const tierRoman = ['I', 'II', 'III', 'IV', 'V'];
-  const traitsArr = stringToArray(traits);
-  const unitIcon = getUnitIcon(unitType);
-
-  const downloadHandler = () => {
-    const domElement = document.getElementById('unit-card');
-    const cardName = unitName;
-    downloadAsPng(domElement, cardName);
-  }
-
-  // const saveCardHandler = () => {
-  //   saveCardToLocalStorage(formValues, storageKey);
-  // }
-  
+  const tags = [toTitle(unitExperience), toTitle(unitEquipment), ancestry || 'Human', toTitle(unitType)].join(' · ');
 
   return (
-    <div className="card-container">
-      <div className="unit-card" id="unit-card">
-        <div className="left-column">
-          <TopDisplay number={ tierRoman[tier - 1] } label="TIER" />
-          <img src={ unitIcon } alt="unit type icon" className="type-icon" />
-          <DamageDisplay dmg={ dmg } numberAtks={ numberAtks } />
-        </div>
-        <div className="right-column">
-          <div className="top-right-container">
-            <div className="names-tags">
-              <Nameplate text={ unitName } type="title" />
-              <Nameplate text={ commanderName} type="labeled" label="Commander" />
-              <Nameplate text={ tags } type="tags" />
-            </div>
-            <TopDisplay number={ unitSize } label="SIZE" />
-          </div>
-          <div className="stats-container">
-            <StatsDisplay value={`+${atk}`} label="ATK" />
-            <StatsDisplay value={ def } label="DEF" />
-            <StatsDisplay value={ `+${pow}` } label="POW" />
-            <StatsDisplay value={ tou } label="TOU" />
-            <StatsDisplay value={ `+${mor}` } label="MOR" />
-            <StatsDisplay value={ `+${com}` } label="COM" />
-          </div>
-          <TraitsDisplay traits={ traitsArr } />
-        </div>
+    <div
+      ref={ ref }
+      className={ `unit-card${inkSaver ? ' ink-saver' : ''}` }
+      role="img"
+      aria-label={ `Unit card for ${unitName || 'an unnamed unit'}` }
+    >
+      <div className="banner">
+        <TopDisplay value={ toRoman(tier) } label="Tier" />
+        <img src={ getUnitIcon(unitType) } alt="" className="type-icon" />
+        <span className="type-label">{ toTitle(unitType) }</span>
+        <DamageDisplay numberAtks={ formatPlain(numberAtks) } dmg={ formatPlain(dmg) } />
       </div>
-      <button
-        className="standard-button"
-        onClick={ downloadHandler }
-      >
-        Download As Image
-      </button>
-      <button
-        className="standard-button"
-        onClick={ saveCardHandler }
-      >
-        Save Card
-      </button>
+      <div className="card-body">
+        <div className="card-header">
+          <Nameplate unitName={ unitName } commanderName={ commanderName } tags={ tags } />
+          <TopDisplay value={ unitSize } label="Size" />
+        </div>
+        <div className="stats-row">
+          <StatsDisplay value={ formatSigned(atk) } label="ATK" />
+          <StatsDisplay value={ formatPlain(def) } label="DEF" />
+          <StatsDisplay value={ formatSigned(pow) } label="POW" />
+          <StatsDisplay value={ formatPlain(tou) } label="TOU" />
+          <StatsDisplay value={ formatSigned(mor) } label="MOR" />
+          <StatsDisplay value={ formatSigned(com) } label="COM" />
+        </div>
+        <TraitsDisplay traits={ parseTraits(traits) } />
+      </div>
     </div>
   );
-}
+});
+
+export default Card;

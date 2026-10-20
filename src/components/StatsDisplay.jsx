@@ -1,12 +1,8 @@
-import './StatsDisplay.css';
-
 export default function StatsDisplay({ value, label }) {
   return (
-    <div className="big-stat-display">
-      <div className="stats-frame">
-        <span className="number">{ value }</span>
-      </div>
-      <span className="label">{ label }</span>
+    <div className="stat-box">
+      <span className="stat-value">{ value }</span>
+      <span className="card-caption">{ label }</span>
     </div>
   );
 }
