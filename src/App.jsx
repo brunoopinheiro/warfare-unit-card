@@ -10,6 +10,7 @@ import Form from './components/Form';
 import Card from './components/Card';
 import ExportPanel from './components/ExportPanel';
 import Footer from './components/Footer';
+import AdSlot from './components/AdSlot';
 import Sidebar from './components/Sidebar';
 
 const EMPTY_STATUS = { tone: 'info', text: '' };
@@ -112,7 +113,7 @@ function App() {
         <button type="button" role="tab" id="tab-preview" aria-selected={ view === 'preview' } aria-controls="preview-panel" onClick={ () => setView('preview') }>Preview</button>
       </div>
 
-      <main className="workspace" data-view={ view }>
+      <main className="workspace" data-view={ view } google-side-rail-overlap="false">
         <div className="editor-panel" id="editor-panel">
           <Form values={ formValues } onFieldChange={ onFieldChange } />
         </div>
@@ -139,6 +140,7 @@ function App() {
         </section>
       </main>
 
+      <AdSlot />
       <Footer />
 
       <div className="mobile-action-bar">
